@@ -26,3 +26,10 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Ignore all files in "Projekt_1" except images (.png, .jpg, .jpeg) and .tex
+Projekt_1/*
+!Projekt_1/*.tex
+!Projekt_1/*.png
+!Projekt_1/*.jpg
+!Projekt_1/*.jpeg
