@@ -1,0 +1,89 @@
+\documentclass[12pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{ngerman}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage[european,smartlabels,siunitx]{circuitikz}
+\usetikzlibrary{calc,positioning}
+
+\pgfdeclareimage[width = 2cm]{meinlogo}{Logo.png}
+
+\usetheme{CambridgeUS}
+\usecolortheme{seagull}
+
+\begin{document}
+	\author{Gruppe D}
+	\title{Kantenerkennung}
+	\subtitle{Projekt 1}
+	\logo{\pgfuseimage{meinlogo}}
+	\institute[HS OWL]{Hochschule Ostwestfalen Lippe}
+	\date{31.10.2018}
+	\subject{was das}
+	%\setbeamercovered{transparent}
+	\setbeamertemplate{navigation symbols}{}
+	
+	
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Inhalt}
+	\tableofcontents	
+\end{frame}
+
+\section{Einleitung}
+	\begin{frame}
+		\frametitle{Problemstellung}
+		\begin{itemize}
+			\item erster
+			\item zweiter
+			\item dritter
+			\item vierter
+			\item fünfter der später kommt		
+		\end{itemize}
+		
+	\end{frame}
+
+\section{Lösungsweg}
+\begin{frame}
+	\frametitle{Punktoperation}
+	\begin{block}{Schwellwerterkennung}	
+		\begin{eqnarray*}
+			f_{treshold}=
+			\begin{cases}
+			a_0   			& \text{für }i_N(t) > i_{NV}\\
+			a_1        		& \text{für }i_N(t) \leq i_{NV} \\
+			a_2        		& \text{für }i_N(t) \leq i_{NV}
+			\end{cases}
+		\end{eqnarray*}
+	\end{block}
+\end{frame}
+
+ \section{Fazit}
+	\begin{frame}
+		\frametitle{Fazit}
+		\begin{itemize}
+			\item erster
+			\item zweiter
+			\item dritter
+			\item vierter
+			\item fünfter der später kommt		
+		\end{itemize}
+	\end{frame}
+
+\section*{}
+
+\frame{Vielen Dank für eure Aufmerksamkeit}
+
+\end{document}
