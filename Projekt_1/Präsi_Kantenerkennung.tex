@@ -16,13 +16,13 @@
 \usepackage[european,smartlabels,siunitx]{circuitikz}
 \usetikzlibrary{calc,positioning}
 
-\pgfdeclareimage[width = 2cm]{meinlogo}{Logo.png}
+\pgfdeclareimage[width = 1.5cm]{meinlogo}{Logo.png}
 
 \usetheme{CambridgeUS}
 \usecolortheme{seagull}
 
 \begin{document}
-	\author{Gruppe D}
+	\author[Gruppe D]{\textbf{Marcel Sandermann}, Micha Beyer, Patrick Schlüter}
 	\title{Kantenerkennung}
 	\subtitle{Projekt 1}
 	\logo{\pgfuseimage{meinlogo}}
@@ -43,60 +43,84 @@
 \end{frame}
 
 \section{Einleitung}
-	\begin{frame}
-		\frametitle{Problemstellung}
-		\begin{itemize}
-			\item erster
-			\item zweiter
-			\item dritter
-			\item vierter
-			\item fünfter der später kommt		
-		\end{itemize}
-		
-	\end{frame}
 
-\section{Lösungsweg}
 \begin{frame}
-	\frametitle{Punktoperation}
-	\begin{block}{Schwellwerterkennung}	
-		\begin{eqnarray*}
-			f_{treshold}=
-			\begin{cases}
-			a_0   			& \text{für }i_N(t) > i_{NV}\\
-			a_1        		& \text{für }i_N(t) \leq i_{NV} \\
-			a_2        		& \text{für }i_N(t) \leq i_{NV}
-			\end{cases}
-		\end{eqnarray*}
-	\end{block}
+	\frametitle{Problemstellung}
+	\begin{itemize}
+		\item Kanten einer gegebenen Zellstruktur sollen erkannt werden
+		\item Übergangsbereich ist undefiniert		
+	\end{itemize}
+	\begin{columns}[c]
+		\column{.5\textwidth}
+		\begin{figure}
+		\includegraphics[width=0.5\linewidth]{Anfang.png}
+		\caption{Ausgangssituation}	
+		\end{figure}
+		\column{.5\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.5\linewidth]{Ergebnis.png}
+			\caption{Ergebnis}
+		\end{figure}		 	
+	\end{columns}	
 \end{frame}
 
- \section{Fazit}
-	\begin{frame}
-		\frametitle{Fazit}
+\section{Lösungsweg}
+
+\begin{frame}
+\frametitle{Punktoperation}
+\begin{itemize}
+	\item Festlegung der Schwellwerte
+	\item Jeder Pixel wird einzelnd betrachtet
+	\item Kantenerkennung via Schwellwerterkennung
+\end{itemize}
+\begin{block}{Schwellwerterkennung}	
+	\begin{equation*}
+		f_{treshold}=
+		\begin{cases}
+			a_0   			& \text{für } a < q_1,\\
+			a_1        		& \text{für } q_1 \leq a \leq q_2, \\
+			a_0        		& \text{für } q_2 < a,
+		\end{cases}
+	\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.7\linewidth]{Code.png}
+		\caption{Java-Code zur Schwellwertbearbeitung}
+	\end{figure}
+\end{frame}
+
+\section{Fazit}
+
+\begin{frame}
+	\frametitle{Fazit}
+	\begin{itemize}
+		\item Keine wirkliche Kantenerkennung 
 		\begin{itemize}
-			\item erster
-			\item zweiter
-			\item dritter
-			\item vierter
-			\item fünfter der später kommt		
+			\item Kante besteht aus mehreren Pixeln
 		\end{itemize}
-	\end{frame}
+		\item \textbf{Punktoperation für diese Anwendung nicht sinnvoll}		
+	\end{itemize}
+\end{frame}
 
 \section*{}
 
-
 \begin{frame}
 	\frametitle{References}
-	\Large{Vielen Dank für eure Aufmerksamkeit}
-	
-	\footnotesize{
+	\Large{Vielen Dank für eure Aufmerksamkeit}	
+	\newline
+	\begin{block}{Quellen}
+		\small{	
 		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
 			\bibitem[Burger, Burge, 2015]{p1} Wilhelm Burger, Mark James Burge (2015)
 			\newblock Digitale Bildverarbeitung: Eine algorithmische Einführung mit Java
 			%\newblock \emph{Journal Name} 12(3), 45 -- 678.
 		\end{thebibliography}
-	}
+		}
+	\end{block}
 \end{frame}
-
 
 \end{document}
