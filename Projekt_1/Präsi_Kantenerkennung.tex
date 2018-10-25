@@ -40,14 +40,11 @@
 	moredelim=[il][\textcolor{pgrey}]{$$},
 	moredelim=[is][\textcolor{pblue}]{\%\%}{\%\%}
 }
-
 \pgfdeclareimage[width = 1.5cm]{meinlogo}{Logo.png}
-
 \usetheme{CambridgeUS}
 \usecolortheme{seagull}
-
 \begin{document}
-	\author[Gruppe D]{\textbf{Marcel Sandermann}, Micha Beyer, Patrick Schlüter}
+	\author[Gruppe D]{Marcel Sandermann, Micha Beyer, Patrick Schlüter}
 	\title{Kantenerkennung}
 	\subtitle{Projekt 1}
 	\logo{\pgfuseimage{meinlogo}}
@@ -61,19 +58,17 @@
 \begin{frame}
 	\titlepage
 \end{frame}
-
 \begin{frame}
 	\frametitle{Inhalt}
 	\tableofcontents	
 \end{frame}
-
 \section{Einleitung}
 \subsection{Problemstellung}
 \begin{frame}
 	\frametitle{Problemstellung}
 	\begin{itemize}
 		\item Kanten einer gegebenen Zellstruktur sollen erkannt werden
-		\item Übergangsbereich ist undefiniert		
+		\item Farbwerte des Übergangsbereich sind unbekannt		
 	\end{itemize}
 	\begin{columns}[c]
 		\column{.5\textwidth}
@@ -84,14 +79,12 @@
 		\column{.5\textwidth}
 		\begin{figure}
 			\includegraphics[width=0.5\linewidth]{Ergebnis.png}
-			\caption{Ergebnis}
+			\caption{Ziel}
 		\end{figure}		 	
 	\end{columns}	
 \end{frame}
-
 \section{Lösungsweg}
 \subsection{Punktoperation \& Schwellwerterkennung}
-
 \begin{frame}
 \frametitle{Punktoperation}
 \begin{itemize}
@@ -99,19 +92,21 @@
 	\item Jeder Pixel wird einzelnd betrachtet
 	\item Kantenerkennung via Schwellwerterkennung
 \end{itemize}
+
+\pause
+
 \begin{block}{Schwellwerterkennung}	
 	\begin{equation*}
 		f_{treshold}=
 		\begin{cases}
-			a_0   			& \text{für } a < q_1,\\
-			a_1        		& \text{für } q_1 \leq a \leq q_2, \\
-			a_0        		& \text{für } q_2 < a,
+			0   			& \text{für } p < 95,\\
+			255        		& \text{für } 95 \leq p \leq 135, \\
+			0        		& \text{für } p < 135,
 		\end{cases}
 	\end{equation*}
 \end{block}
 \end{frame}
 \subsection{Javaprogramm}
-
 \begin{frame}[fragile]
 	\frametitle{Java-Code}
 	\begin{lstlisting}[basicstyle=\scriptsize]
@@ -146,15 +141,16 @@
 		\begin{itemize}
 			\item Kante besteht aus mehreren Pixeln
 		\end{itemize}
-		\item \textbf{Punktoperation für diese Anwendung nicht sinnvoll}		
+		\\
+		\item \textbf{Punktoperation für diese Anwendung nur begrenzt sinnvoll}		
 	\end{itemize}
 \end{frame}
 
 \section*{}
 
 \begin{frame}
-	\frametitle{Referenzen}
-	\Large{Vielen Dank für eure Aufmerksamkeit}	
+	
+	\Large\centering{Vielen Dank für eure Aufmerksamkeit}	
 	\newline
 	\begin{block}{Quellen}
 		\small{	
