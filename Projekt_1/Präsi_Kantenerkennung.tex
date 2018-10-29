@@ -1,4 +1,4 @@
-\documentclass[12pt]{beamer}
+\documentclass[14pt]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -40,6 +40,7 @@
 	moredelim=[il][\textcolor{pgrey}]{$$},
 	moredelim=[is][\textcolor{pblue}]{\%\%}{\%\%}
 }
+
 \pgfdeclareimage[width = 1.5cm]{meinlogo}{Logo.png}
 \usetheme{CambridgeUS}
 \usecolortheme{seagull}
@@ -88,7 +89,6 @@
 \begin{frame}
 \frametitle{Punktoperation}
 \begin{itemize}
-	\item Festlegung der Schwellwerte
 	\item Jeder Pixel wird einzelnd betrachtet
 	\item Kantenerkennung via Schwellwerterkennung
 \end{itemize}
@@ -99,12 +99,17 @@
 	\begin{equation*}
 		f_{treshold}=
 		\begin{cases}
-			0   			& \text{für } p < 95,\\
-			255        		& \text{für } 95 \leq p \leq 135, \\
-			0        		& \text{für } p < 135,
+			a_0   			& \text{für } p < q_1,\\
+			a_1        		& \text{für } q_1 \leq p \leq q_2, \\
+			a_0        		& \text{für } q_2 < p,
 		\end{cases}
 	\end{equation*}
 \end{block}
+
+\begin{itemize}
+	\item Festlegung der Schwellwerte
+\end{itemize}
+
 \end{frame}
 \subsection{Javaprogramm}
 \begin{frame}[fragile]
@@ -141,7 +146,7 @@
 		\begin{itemize}
 			\item Kante besteht aus mehreren Pixeln
 		\end{itemize}
-		\\
+		
 		\item \textbf{Punktoperation für diese Anwendung nur begrenzt sinnvoll}		
 	\end{itemize}
 \end{frame}
